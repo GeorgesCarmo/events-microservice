@@ -3,6 +3,7 @@ package com.carmo.eventsmicroservice.services;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.carmo.eventsmicroservice.domain.Event;
@@ -16,11 +17,14 @@ import com.carmo.eventsmicroservice.repositories.SubscriptionRepository;
 
 @Service
 public class EventService {
-
+	
+	@Autowired
 	private EventsRepository eventRepository;
 	
+	@Autowired
 	private SubscriptionRepository subscriptionRepository;
 	
+	@Autowired
 	private EmailServiceClient emailServiceClient;
 	
 	public List<Event> getAllEvents(){

@@ -20,12 +20,7 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 @Entity(name = "subscription")
 public class Subscription {
-
-	public Subscription(Event event, String participantEmail) {
-		this.event = event;
-		this.participantEmail = participantEmail;
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -34,4 +29,17 @@ public class Subscription {
 	private Event event;
 	
 	private String participantEmail;
+
+	public Subscription(Event event, String participantEmail) {
+		this.event = event;
+		this.participantEmail = participantEmail;
+	}
+
+	public String getParticipantEmail() {
+		return participantEmail;
+	}
+
+	public void setParticipantEmail(String participantEmail) {
+		this.participantEmail = participantEmail;
+	}
 }
